@@ -1,0 +1,321 @@
+
+<div class="loading-screen-wrapper" *ngIf="loading">
+    <div class="loading-screen-icon">
+      Loading...
+    </div>
+  </div>
+<div id="homesection" class="page-wrapper">
+    <div class="corner"></div>
+    <div class="views-label"><i class="fas fa-eye"></i>Views: <b><span id="llbvisit">512</span></b></div>
+    <div class="upper">
+        <!-- User Profile Pic -->
+        <img src="https:///images.mbgcard.com/1061/SAVE_20201208_195302.jpg" id="ProfileImage" class="profile-pic-img">
+        <input type="hidden" name="cardid" id="cardid" value="1061">
+        <input type="hidden" name="emailId" id="emailId" value="lookinsaloon@gmail.com">
+        <!-- User Company Name -->
+        <div class="firmname"><span id="llbCompanyNameTop"><b> {{companyName}} </b></span></div>
+        <div id="div1" style="width:40%;height:2px;margin-bottom:10px;background-color:#F5BC31;"></div>
+        <!-- User First Name and Last Name -->
+        <div class="name"><span id="llbcompleteName">   </span><span style="margin-top: 5px; display: block"><i style="font-size: 12px;">(<span id="llbDesignation"><b>{{natureOfBusiness}}</b></span>)</i></span></div>
+        
+        <div class="contact-buttons">
+            <a href="tel:{{ phoneNumber }}" id="hrefContact" class="contact-button">
+                <i class="fas fa-phone fa-flip-horizontal"></i>
+                <!-- Call -->
+            </a>
+            <a href="https://wa.me/{{whatsAppNumber}}?text=Got%20reference%20from%20your%20Digital%20vCard.%20Want%20to%20know%20more%20about%20your%20products%20and%20services." id="whatappShare" class="contact-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <!-- Whatsapp -->
+            </a>
+            <a href="{{mapLocation}}" id="gmap1" class="contact-button" target="_blank">
+                <i class="fas fa-map-marker-alt fa-flip-horizontal"></i>
+                <!-- Direction -->
+            </a>
+            <a href="mailto:{{email}}" id="hyperEmail" class="contact-button" target="_blank">
+                <i class="fas fa-envelope fa-flip-horizontal"></i>
+                <!-- Mail -->
+            </a>
+        </div>
+    </div>
+    <div class="lower">
+        <table class="contact-action-table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="trapezoid">
+                            <a href="tel:{{ phoneNumber }}" id="HyperPhone" target="_blank" class="contact-action-container-icon">
+                                <i class="fas fa-phone fa-flip-horizontal"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        
+                        <a href="tel:{{ phoneNumber }}" id="hredCallContact" target="_blank" class="contact-action-container-text" title="8010626928">{{phoneNumber}}</a><br>
+                        <a href="tel:{{alternateNo}}" id="hredCallContactAlternative" target="_blank" class="contact-action-container-text">{{alternateNo}}</a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="trapezoid">
+                            <a href="{{mapLocation}}" id="gmap" target="_blank" class="contact-action-container-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="{{mapLocation}}" id="address" target="_blank" class="contact-action-container-text address-text">{{address}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="trapezoid">
+                            <a href="mailto:{{email}}" id="emailId1" target="_blank" class="contact-action-container-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <a id="emailId2" class="contact-action-container-text">{{email}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="trapezoid">
+                            <a id="website1" target="_blank" class="contact-action-container-icon">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <a id="website2" target="_blank" class="contact-action-container-text"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="padding: 15px;">
+            <div class="p-30"></div>
+            <div class="whatsapp-input">
+                <div class="input-wrapper">
+                    <label>+91</label>
+                    <input id="whatsapp-input" #clientNumber class="input"  placeholder="Enter mobile number" maxlength="13" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+                </div>
+                <a class="whatsapp-button" href="javascript:void(0);" (click)="handleWhatsappShare(clientNumber.value)">
+                    <i class="fab fa-whatsapp"></i>Share on Whatsapp
+                    </a>
+            </div>
+            <div class="p-20"></div>
+            <div class="shadow-buttons">
+                
+                <a href="https://images.mbgcard.com/1061/LOOK'INUNISEXSALON_.vcf" id="hyperCard" class="shadow-button" download=""><i class="fas fa-download shadow-button-icon"></i>Add to Phone Book</a>
+                <a id="shareButton" class="shadow-button" onclick="openShareModal(this, 'MyProfile')"><i class="fas fa-share-alt shadow-button-icon"></i>Share</a>
+              
+                <a id="getapp" class="add-button" download=""><i class="fas fa-download shadow-button-icon"></i>Download App</a>    
+            </div>
+            
+            <div class="p-30"></div>
+            <ul class="inprofile share-buttons">
+                <li class="share-button">
+                    <a href="{{facebookLink}}" id="facebookLink" target="_blank"><i class="share-button-facebook fab fa-facebook-f"></i></a>
+                </li>
+                <li class="share-button">
+                    <a id="twitter" target="_blank"><i class="share-button-twitter fab fa-twitter"></i></a>
+                </li>
+                <li class="share-button">
+                    <a href="{{instaLink}}" id="instagrams" target="_blank"><i class="share-button-instagram fab fa-instagram"></i></a>
+                </li>
+                <li class="share-button">
+                    <a target="_blank"><i class="share-button-youtube fab fa-youtube"></i></a>
+                </li>
+                <li class="share-button">
+                    <a target="_blank"><i class="share-button-pinterest fab fa-pinterest-p"></i></a>
+                </li>
+                <li class="share-button">
+                    <a href="{{instaLink}}" id="LinkedInn" target="_blank"><i class="share-button-linkedin fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="corner-bottom"></div>
+</div>
+<div id="AboutUsSection" class="section-container">
+    <div class="corner"></div>
+    <h2 class="section-header">About Us</h2>
+    <div id="div2" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <table class="about-us-table">
+        <tbody>
+            <tr>
+                <td class="table-row-label">
+                    <h3 class="table-row-label-text">Name Of Services</h3><b class="table-row-label-separator">:</b>
+                </td><td>
+                </td><td class="table-row-value">
+                    <span id="llbCompanyName"><b> {{companyName}} </b></span>
+                    
+                </td><td>
+            </td></tr>
+            <tr id="YearOfEst">
+<td class="table-row-label">
+                        <h3 class="table-row-label-text">Year of Est.</h3><b class="table-row-label-separator">:</b>
+                    </td>
+<td>
+                    </td>
+<td class="table-row-value">
+                    <span id="llbEstYear"><b>{{estYear}}</b></span>
+                    </td>
+<td>
+                </td>
+</tr>
+
+            <tr id="NatureOfBuss">
+<td class="table-row-label">
+                        <h3 class="table-row-label-text">Nature of Business</h3><b class="table-row-label-separator">:</b>
+                    </td>
+<td>
+                    </td>
+<td class="table-row-value">
+                        <span id="llbNatureOfBusiness"><b>{{natureOfBusiness}}</b></span>
+                    </td>
+<td>
+                </td>
+</tr>
+
+        </tbody>
+    </table>
+    
+        
+    <div id="aboutDesc" class="about-us-text"><p id="AboutUsDesc"></p><h3 class="marB10" style="box-sizing: border-box; font-family: Cinzel, serif; font-weight: normal; line-height: 1.6em; margin: 0px 0px 10px; font-size: 24px; position: relative; background: none rgb(255, 255, 255);">We Are An Upscale Full Service Unisex Salon.</h3><div style="box-sizing: border-box; font-family: Muli, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><p style="box-sizing: border-box; margin: 0px 0px 30px; font-family: Lato, sans-serif; font-size: 16px; line-height: 1.6em; text-align: justify;">Individual Attention and Great Value! We work with International Skin and Hair Products will offer customers both quality products and excellent individualized service to suit your lifestyle. At<font color="#ff0000" style="font-weight: bold;"> LOOK'IN UNISEX SALON</font>, will provide you the best and quick services amongst all.<br><br>We provide the knowledge of good and original products to customers who will suits your healthy lifestyle according to your choice and demand. Our highly trained, experienced professionals offer the latest in our salon, coloring techniques and treatment, spa treatments and Face treatments. We take great pride and satisfaction in providing our clients a warm, friendly atmosphere that is inviting and relaxing.</p><p style="box-sizing: border-box; margin: 0px 0px 30px; font-family: Lato, sans-serif; font-size: 16px; line-height: 1.6em; text-align: justify;">Your experience at&nbsp;<b>LOOK'IN UNISEX SALON</b> will leave you rejuvenated and looking your own personality or identity which you are seeking for!</p></div><p></p></div>
+    
+
+    <div class="corner-bottom"></div>
+</div>
+
+<div id="ProductsServicesSection" class="section-container">
+    <div class="corner"></div>
+    <h2 class="section-header">Products/Services</h2>
+    <div id="div3" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="ProductGroup" *ngFor="let element of productImageArray">
+        <div class="card">
+        <h3 class="card-title"></h3>
+        <div class="product-description"><p></p></div>
+        <img onclick="openImageModal(this)" alt="" src="/assets/images/{{element}}" style="width:100%;margin-bottom: 15px;">
+        <div class="product-enquiry-section"><a href="https://wa.me/{{whatsAppNumber}}?text=Hi,%20I%20am%20interested%20in%20your%20product/service:%20%27%20Please%20provide%20more%20details." target="blank" class="product-enquiry-btn">Enquiry</a></div>
+    </div>
+        </div>
+    <div class="corner-bottom"></div>
+
+</div>
+<div id="gallerysection" class="section-container">
+    <div class="corner"></div>
+    <h2 class="section-header">Gallery</h2>
+    <div id="div5" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="ImageGallery" class="images-container">
+    <div *ngFor="let element of galleryImageArray">
+        <div class="image-wrapper"><img onclick="openImageModal(this)" alt="Image 1" src="/assets/images/{{element}}" style="width:100%"></div>
+    </div>
+    <div class="corner-bottom"></div>
+</div>
+
+<div id="feedbacksection" class="section-container">
+    <div class="corner"></div>
+    <h2 class="section-header">Rate Us</h2>
+    <div id="div6" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+<a href="https://g.page/look-in-unisex-salon/review?rc" id="gmbimage" target="_blank"><img src="/assets/images/GoogleBusiness.png" style="width:90%"></a>
+<a href="https://g.page/look-in-unisex-salon/review?rc" id="gmbImageRateUs" target="_blank" cssclass="buttonstyle"><input id="btnreview" type="button" class="buttonstyle" value="Review Us"></a>
+
+
+  
+
+    <div class="corner-bottom"></div>
+
+</div>
+
+<div id="enquirysection" class="section-container">
+    <div class="corner"></div>
+        
+            <h2 class="section-header">Contact Us</h2>
+            <div id="div7" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+            
+                <!-- Full Name:<br/> -->
+                
+                <input name="txtGuestName" type="text" id="txtGuestName" class="inputtext" placeholder=" Enter Full Name">
+                <br>
+                <div class="flex">
+                    <div class="enquiry-phoneNumber">
+                        <!-- Phone Number:<br/> -->
+                        <input name="txtGuestphoneNumber" type="text" id="txtGuestphoneNumber" class="inputtext" placeholder="Enter Phone Number">
+                        
+                        <br>
+                    </div>
+                    <div class="enquiry-email">
+                        <!-- Email:<br/> -->
+                        <input name="txtGuestEmailId" type="text" id="txtGuestEmailId" class="inputtext" placeholder=" Enter Email">
+                        
+                        <br>
+                    </div>
+                </div>
+                <!-- Message:<br/> -->
+                
+                <textarea name="txtGuestmessage" rows="2" cols="20" id="txtGuestmessage" class="inputtext" placeholder="Enter Message"></textarea>
+                <br>
+                <input type="submit" name="BttnEnq" value="Send" id="BttnEnq" class="buttonstyle">
+                
+            
+        <span></span>
+        
+                        <div class="corner-bottom"></div>
+    
+        </div>
+        <div class="footer">
+            <ul class="footer-menu">
+                <li>
+                    <a href="#homesection" id="HomeUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-home"></i>
+                        <div class="footer-menu-text">HOME</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#AboutUsSection" id="AboutUsUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-briefcase"></i>
+                        <div class="footer-menu-text">ABOUT US</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#ProductsServicesSection" id="ProductUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-box-open"></i>
+                        <div class="footer-menu-text">PRODUCTS</div>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#PaymentOptionsSection" id="PaymentUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-money-bill-alt"></i>
+                        <div class="footer-menu-text">PAYMENT</div>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="#gallerysection" id="GalleryUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-file-image"></i>
+                        <div class="footer-menu-text">GALLERY</div>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#feedbacksection" id="FeedbackUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-star"></i>
+                        <div class="footer-menu-text">FEEDBACK</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#enquirysection" id="EnquiryUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-comment-alt"></i>
+                        <div class="footer-menu-text">ENQUIRY</div>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#refernearnsection" id="RefernEarnUrl" class="footer-menu-link">
+                        <i class="footer-menu-icon fas fa-comment-alt"></i>
+                        <div class="footer-menu-text">Create Own Card</div>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
