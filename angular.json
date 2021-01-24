@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "msn-cards"
+  "defaultProject": "msn-cards",
+  "cli": {
+    "analytics": false
+  }
 }

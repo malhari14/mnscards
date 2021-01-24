@@ -13,7 +13,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 companyName : string = "";
 cardHolderName : string = "";
-disignation : string = "";
+designation : string = "";
 phoneNumber : string = "";
 whatsAppNumber : string = "";
 alternateNo : string = "";
@@ -28,6 +28,8 @@ linkedInLink : string = "";
 youtubeLink : string = "";
 estYear : string = "";
 natureOfBusiness : string = "";
+views : string = "";
+businessInfo : string = ""
 galleryImageArray:any;
 productImageArray:any;
 cardData:any;
@@ -54,12 +56,12 @@ loading:boolean=true;
           this.userId=this.readCookie(this.coookieName);
           if(this.userId){
             this.getCardData(this.userId);
-  
-            
+
+
           }
         }
 
-  
+
       });
 
 
@@ -67,24 +69,29 @@ loading:boolean=true;
 getCardData(userId:any){
 this.loading=true;
   this.mnsService.getCardData(this.userId).subscribe(data => {
-    this.loading=false;
-    this.companyName = data[0].companyname;
-    this.natureOfBusiness=data[0].natureofbusiness;
-    this.estYear=data[0].estyear;
-    this.phoneNumber  = data[0].phonenumber;
-    this.whatsAppNumber=data[0].phonenumber;
-    this.alternateNo  = data[0].alternateumber;
-    this.address = data[0].address;
-    this.email =data[0].email;
-    this.mapLocation = data[0].maplocation;
-    this.facebookLink = data[0].facebooklink;
-    this.instaLink =data[0].instalink;
-    this.galleryImageArray=data[0].galleryImageArray;
-    this.productImageArray=data[0].productImageArray;
-    
-    this.html=data[0].html;
-
-
+    this.loading = false;
+    this.companyName = data.companyName;
+    this.cardHolderName = data.cardHolderName;
+    this.designation = data.designation;
+    this.natureOfBusiness = data.natureOfBusiness;
+    this.estYear = data.estYear;
+    this.phoneNumber  = data.phonenumber;
+    this.whatsAppNumber = data.whatsAppNumber;
+    this.alternateNo  = data.alternateNumber;
+    this.address = data.address;
+    this.email = data.emailId;
+    this.website = data.website;
+    this.mapLocation = data.mapLocation;
+    this.facebookLink = data.facebookLocation;
+    this.instaLink = data.instaLocation;
+    this.twitterLink = data.twitterLocation;
+    this.linkedInLink = data.linkedInLocation;
+    this.youtubeLink = data.youtubeLocation;
+    this.views = data.likes;
+    this.businessInfo = data.businessInfo;
+    this.galleryImageArray = data.galleryImages;
+    this.productImageArray = data.productImages;
+    this.html = data.businessInfo;
 });
 
   // this.companyName = "LOOK'IN UNISEX SALON";
@@ -112,29 +119,29 @@ handleWhatsappShare(clientNumber: any){
   window.open("https://wa.me/91"+clientNumber+"?text=Got%20reference%20from%20your%20Digital%20vCard.%20Want%20to%20know%20more%20about%20your%20products%20and%20services");
 }
 
-createCookie(name: string, value: string, days: number) {  
-  var expires = "";  
-  if (days) {  
-      var date = new Date();  
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  
-      expires = "; expires=" + date.toUTCString();  
-  }  
-  document.cookie = name + "=" + value + expires + "; path=/";  
-}  
-readCookie(name: string) {  
-  debugger;  
-  var nameEQ = name + "=";  
-  var ca = document.cookie.split(';');  
-  for (var i = 0; i < ca.length; i++) {  
-      var c = ca[i];  
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);  
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);  
-  }  
-  return null;  
-} 
-eraseCookie(name: string) {  
-  this.createCookie(name, "", -1);  
-} 
+createCookie(name: string, value: string, days: number) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+readCookie(name: string) {
+  debugger;
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+eraseCookie(name: string) {
+  this.createCookie(name, "", -1);
+}
   ngOnDestroy() {
     this.eraseCookie(this.coookieName);
   }
