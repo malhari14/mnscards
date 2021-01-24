@@ -1,4 +1,3 @@
-
 <div class="loading-screen-wrapper" *ngIf="loading">
     <div class="loading-screen-icon">
       Loading...
@@ -14,7 +13,6 @@
         <input type="hidden" name="emailId" id="emailId" value="lookinsaloon@gmail.com">
         <!-- User Company Name -->
         <div class="firmname"><span id="llbCompanyNameTop"><b> {{companyName}} </b></span></div>
-        <div id="div1" style="width:40%;height:2px;margin-bottom:10px;background-color:#F5BC31;"></div>
         <!-- User First Name and Last Name -->
         <div class="name"><span id="llbcompleteName">   </span><span style="margin-top: 5px; display: block"><i style="font-size: 12px;">(<span id="llbDesignation"><b>{{natureOfBusiness}}</b></span>)</i></span></div>
         
@@ -110,7 +108,7 @@
                 <a href="https://images.mbgcard.com/1061/LOOK'INUNISEXSALON_.vcf" id="hyperCard" class="shadow-button" download=""><i class="fas fa-download shadow-button-icon"></i>Add to Phone Book</a>
                 <a id="shareButton" class="shadow-button" onclick="openShareModal(this, 'MyProfile')"><i class="fas fa-share-alt shadow-button-icon"></i>Share</a>
               
-                <a id="getapp" class="add-button" download=""><i class="fas fa-download shadow-button-icon"></i>Download App</a>    
+                <!-- <a id="getapp" class="add-button" download=""><i class="fas fa-download shadow-button-icon"></i>Download App</a>     -->
             </div>
             
             <div class="p-30"></div>
@@ -142,7 +140,7 @@
 <div id="AboutUsSection" class="section-container">
     <div class="corner"></div>
     <h2 class="section-header">About Us</h2>
-    <div id="div2" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="div2" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
     <table class="about-us-table">
         <tbody>
             <tr>
@@ -184,7 +182,7 @@
     </table>
     
         
-    <div id="aboutDesc" class="about-us-text"><p id="AboutUsDesc"></p><h3 class="marB10" style="box-sizing: border-box; font-family: Cinzel, serif; font-weight: normal; line-height: 1.6em; margin: 0px 0px 10px; font-size: 24px; position: relative; background: none rgb(255, 255, 255);">We Are An Upscale Full Service Unisex Salon.</h3><div style="box-sizing: border-box; font-family: Muli, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><p style="box-sizing: border-box; margin: 0px 0px 30px; font-family: Lato, sans-serif; font-size: 16px; line-height: 1.6em; text-align: justify;">Individual Attention and Great Value! We work with International Skin and Hair Products will offer customers both quality products and excellent individualized service to suit your lifestyle. At<font color="#ff0000" style="font-weight: bold;"> LOOK'IN UNISEX SALON</font>, will provide you the best and quick services amongst all.<br><br>We provide the knowledge of good and original products to customers who will suits your healthy lifestyle according to your choice and demand. Our highly trained, experienced professionals offer the latest in our salon, coloring techniques and treatment, spa treatments and Face treatments. We take great pride and satisfaction in providing our clients a warm, friendly atmosphere that is inviting and relaxing.</p><p style="box-sizing: border-box; margin: 0px 0px 30px; font-family: Lato, sans-serif; font-size: 16px; line-height: 1.6em; text-align: justify;">Your experience at&nbsp;<b>LOOK'IN UNISEX SALON</b> will leave you rejuvenated and looking your own personality or identity which you are seeking for!</p></div><p></p></div>
+    <div id="aboutDesc" class="about-us-text"><p id="AboutUsDesc"></p><h3 class="marB10" style="box-sizing: border-box; font-family: Cinzel, serif; font-weight: normal; line-height: 1.6em; margin: 0px 0px 10px; font-size: 24px; position: relative; background: none rgb(255, 255, 255);">We Are An Upscale Full Service Unisex Salon.</h3><div style="box-sizing: border-box; font-family: Muli, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><p style="box-sizing: border-box; margin: 0px 0px 30px; font-family: Lato, sans-serif; font-size: 16px; line-height: 1.6em; text-align: justify;" [innerHTML]="html"></p></div><p></p></div>
     
 
     <div class="corner-bottom"></div>
@@ -193,13 +191,13 @@
 <div id="ProductsServicesSection" class="section-container">
     <div class="corner"></div>
     <h2 class="section-header">Products/Services</h2>
-    <div id="div3" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="div3" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
     <div id="ProductGroup" *ngFor="let element of productImageArray">
         <div class="card">
         <h3 class="card-title"></h3>
         <div class="product-description"><p></p></div>
         <img onclick="openImageModal(this)" alt="" src="/assets/images/{{element}}" style="width:100%;margin-bottom: 15px;">
-        <div class="product-enquiry-section"><a href="https://wa.me/{{whatsAppNumber}}?text=Hi,%20I%20am%20interested%20in%20your%20product/service:%20%27%20Please%20provide%20more%20details." target="blank" class="product-enquiry-btn">Enquiry</a></div>
+        <div class="product-enquiry-section"><div class="product-price"><b>{{element.productPrice}}</b></div><a href="https://wa.me/{{whatsAppNumber}}?text=Hi,%20I%20am%20interested%20in%20your%20product/service:%20%27%20Please%20provide%20more%20details." target="blank" class="product-enquiry-btn">Enquiry</a></div>
     </div>
         </div>
     <div class="corner-bottom"></div>
@@ -208,18 +206,18 @@
 <div id="gallerysection" class="section-container">
     <div class="corner"></div>
     <h2 class="section-header">Gallery</h2>
-    <div id="div5" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="div5" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
     <div id="ImageGallery" class="images-container">
     <div *ngFor="let element of galleryImageArray">
         <div class="image-wrapper"><img onclick="openImageModal(this)" alt="Image 1" src="/assets/images/{{element}}" style="width:100%"></div>
     </div>
     <div class="corner-bottom"></div>
 </div>
-
+</div>
 <div id="feedbacksection" class="section-container">
     <div class="corner"></div>
     <h2 class="section-header">Rate Us</h2>
-    <div id="div6" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+    <div id="div6" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
 <a href="https://g.page/look-in-unisex-salon/review?rc" id="gmbimage" target="_blank"><img src="/assets/images/GoogleBusiness.png" style="width:90%"></a>
 <a href="https://g.page/look-in-unisex-salon/review?rc" id="gmbImageRateUs" target="_blank" cssclass="buttonstyle"><input id="btnreview" type="button" class="buttonstyle" value="Review Us"></a>
 
@@ -234,7 +232,7 @@
     <div class="corner"></div>
         
             <h2 class="section-header">Contact Us</h2>
-            <div id="div7" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#F5BC31;"></div>
+            <div id="div7" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
             
                 <!-- Full Name:<br/> -->
                 

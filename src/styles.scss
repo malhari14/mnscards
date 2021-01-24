@@ -5,16 +5,21 @@ strong, b {
 .corner {
     width: 0;
     height: 0;
-    border-top: 80px solid #F5BC31;
+    border-top: 80px solid #fff;
     border-right: 150px solid transparent;
     margin-left: -15px;
+}
+
+.body-background {
+    background-color: #007bb6;
+    background-image: 'url(https://wallpaperaccess.com/full/656665.jpg)'
 }
 
 .corner-bottom {
     width: 0;
     height: 0;
     margin-left: auto;
-    border-bottom: 80px solid #F5BC31;
+    border-bottom: 80px solid #fff;
     border-left: 150px solid transparent;
     margin-right: -15px;
 }
@@ -42,15 +47,16 @@ strong, b {
     font-size: 14px;
     margin-bottom: 0px;
     border-top: 0;
-    background: #F5BC31;
+    background: #007bb6;
+    border-radius: 50%;
 }
 
 .profile-pic-img {
     width: 120px;
-    border-radius: 50%;
+    // border-radius: 50%;
     border: 2px solid rgba(0,0,0,1);
     margin-bottom: 5px;
-    border: 5px solid #F5BC31;
+    border: 5px solid #007bb6;
     padding: 5px;
 }
 
@@ -59,6 +65,7 @@ strong, b {
     font-family: 'Uniform Medium';
     margin: 10px 0;
     text-transform: uppercase;
+    border-bottom: 2px solid #007bb6;
 }
 
 .name {
@@ -67,13 +74,7 @@ strong, b {
     margin: 4px 0 0;
 }
 
-/* .curve {
-    background-image: url(./curve.svg);
-    background-position: center top;
-    background-size: 150px 16px;
-    background-repeat: repeat-x;
-    height: 14px;
-} */
+
 
 .lower {
     /* background-color: var(--theme-color); */
@@ -102,8 +103,8 @@ strong, b {
     border: none;
     margin-right: 5px;
     margin-bottom: 10px;
-    border: 1px solid #F5BC31;
-    background-color: #F5BC31;
+    border: 1px solid #007bb6;
+    background-color: #007bb6;
 }
 
 .contact-button i {
@@ -121,7 +122,7 @@ strong, b {
 
 .contact-action-table tr:nth-child(even) .trapezoid {
     border-bottom: 30px solid transparent;
-    border-right: 60px solid #F5BC31;
+    border-right: 60px solid #007bb6;
     border-top: 30px solid transparent;
     height: 40px;
     width: 0;
@@ -132,7 +133,7 @@ strong, b {
 
 .contact-action-table tr:nth-child(odd) .trapezoid {
     border-bottom: 30px solid transparent;
-    border-left: 60px solid #F5BC31;
+    border-left: 60px solid #007bb6;
     border-top: 30px solid transparent;
     height: 40px;
     width: 0;
@@ -140,19 +141,19 @@ strong, b {
 }
 
 .contact-action-table tr:nth-child(1) .trapezoid {
-    border-left-color: #F5BC31;
+    border-left-color: #007bb6;
 }
 
 .contact-action-table tr:nth-child(2) .trapezoid {
-    border-right-color: #c49627;
+    border-right-color: hsl(199, 100%, 36%);
 }
 
 .contact-action-table tr:nth-child(3) .trapezoid {
-    border-left-color: #93711d;
+    border-left-color: #007bb6;
 }
 
 .contact-action-table tr:nth-child(4) .trapezoid {
-    border-right-color: #624b14;
+    border-right-color: #007bb6;
 }
 
 .contact-action-container-icon {
@@ -163,7 +164,7 @@ strong, b {
     height: 30px;
     text-align: center;
     line-height: 30px;
-    color: #F5BC31;
+    color: #007bb6;
     background-color: #ffffff;
     font-size: 16px;
     border-radius: 50%;
@@ -189,6 +190,7 @@ strong, b {
     display: inline-block;
     font-family: 'Uniform Medium';
     word-break: break-word;
+    text-decoration: none;
 }
 
 .contact-action-container-text.address-text {
@@ -211,6 +213,32 @@ strong, b {
     color: rgba(0, 0, 0, 0.6);
     padding-left: 40px;
     border: 1px solid rgba(0,0,0,0.2);
+}
+input:not([type="image" i]) {
+    box-sizing: border-box;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }
 
 .whatsapp-button {
@@ -280,13 +308,13 @@ strong, b {
 /* Section CSS Starts */
 .page-wrapper {
     background: #fff;
-    border-left: 15px solid #303030;
+    // border-left: 15px solid #303030;
     box-shadow: 1px 2px 15px #48484833;
     position: relative;
-    border-right: 15px solid #303030;
+    // border-right: 15px solid #303030;
 }
 .section-header {
-    color: #F5BC31;
+    color: #007bb6;
     text-transform: uppercase;
     text-align: center;
     margin-top: -30px;
@@ -304,8 +332,8 @@ strong, b {
     background: #fff;
     /* overflow: hidden; */
     word-break: break-word;
-    border-left: 15px solid #303030;
-    border-right: 15px solid #303030;
+    // border-left: 15px solid #303030;
+    // border-right: 15px solid #303030;
 }
 
 .section-container .corner {
@@ -322,7 +350,7 @@ strong, b {
 .card {
     text-align: left;
     /* background-color: var(--theme-color-light); */
-    border: 1px solid #F5BC31;
+    border: 1px solid #007bb6;
     padding: 15px;
     max-width: 100%;
     margin: 0 auto;
@@ -406,7 +434,7 @@ strong, b {
     font-size: 18px;
     padding: 12px;
     border-left: 2px solid #555555;
-    color: #F5BC31;
+    color: #007bb6;
 }
 
 .other-links-wrapper .other-links-header {
@@ -441,7 +469,7 @@ strong, b {
 .product-price {
     font-size: 18px;
     font-family: "Uniform Bold";
-    color: #F5BC31;
+    color: #007bb6;
 }
 
 .product-enquiry-btn {
@@ -449,9 +477,10 @@ strong, b {
     color: #ffffff;
     font-size: 14px;
     display: inline-block;
-    background: linear-gradient(to right, #F5BC31 0%, #F5BC31 100%);
+    background: linear-gradient(to right, #007bb6 0%, #007bb6 100%);
     border: 3px solid #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 /* Product css completed */
 
@@ -505,7 +534,7 @@ strong, b {
 }
 
 .feedback-form input[type=button] {
-    background-color: #F5BC31;
+    background-color: #007bb6;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -540,7 +569,7 @@ strong, b {
 }
 
 .feedback-list .feedback-wrapper .feedback-name {
-    color: #F5BC31;
+    color: #007bb6;
     font-size: 15px;
     font-weight: 500;
 }
@@ -598,7 +627,7 @@ strong, b {
 }
 
 .enquiry-form input[type=button] {
-    background-color: #F5BC31;
+    background-color: #007bb6;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -609,7 +638,7 @@ strong, b {
 }
 .buttonstyle {
 
-    background-color: #F5BC31;
+    background-color: #007bb6;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -679,12 +708,13 @@ strong, b {
     padding: 8px;
     box-sizing: border-box;
     color: #555555;
+    text-decoration: none;
 }
 
 .footer-menu .footer-menu-icon {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #F5BC31;
+    color: #007bb6;
 }
 
 .footer-menu .footer-menu-text {
@@ -704,7 +734,7 @@ strong, b {
 }
 
 .copyright-wrapper-inner {
-    background-color: #F5BC3126;
+    background-color: #007bb626;
     padding: 5px;
 }
 
@@ -1032,7 +1062,7 @@ strong, b {
     .card {
       text-align: left;
       /* background-color: var(--theme-color-light); */
-      border: 1px solid  #F5BC31;
+      border: 1px solid  #007bb6;
       padding: 4px;
       max-width: 100%;
       margin: 0 auto;
@@ -1056,8 +1086,8 @@ strong, b {
   }
 
   body {
-    --theme-color: #F5BC31;
-    --theme-color-light: #F5BC3126;
+    --theme-color: #007bb6;
+    --theme-color-light: #007bb626;
     --theme-color-dark1: #c49627;
     --theme-color-dark2: #93711d;
     --theme-color-dark3: #624b14;

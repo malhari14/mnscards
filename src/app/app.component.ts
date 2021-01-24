@@ -32,8 +32,10 @@ galleryImageArray:any;
 productImageArray:any;
 cardData:any;
 userNumber:any;
+coookieName: string="company";
 router:any;
 userId:any;
+html:any="";
 loading:boolean=true;
 
   constructor(private mnsService : MnsService,private route: ActivatedRoute    ) {}
@@ -43,13 +45,18 @@ loading:boolean=true;
 
       this.route.queryParams.subscribe(params => {
   if(this.route.snapshot)
-        this.userId=this.route.snapshot.queryParamMap.get('userNumber');
+        this.userId=this.route.snapshot.queryParamMap.get('company');
         if(this.userId){
-
-
-          setTimeout(()=>{ this.getCardData(this.userId);}, 2000)
-
-          
+          this.coookieName="company";
+          this.createCookie(this.coookieName,this.userId,1);
+          this.getCardData(this.userId);
+        }else{
+          this.userId=this.readCookie(this.coookieName);
+          if(this.userId){
+            this.getCardData(this.userId);
+  
+            
+          }
         }
 
   
@@ -74,6 +81,8 @@ this.loading=true;
     this.instaLink =data[0].instalink;
     this.galleryImageArray=data[0].galleryImageArray;
     this.productImageArray=data[0].productImageArray;
+    
+    this.html=data[0].html;
 
 
 });
@@ -100,8 +109,33 @@ this.loading=true;
 }
 
 handleWhatsappShare(clientNumber: any){
-  window.open("https://wa.me/"+clientNumber+"?text=Got%20reference%20from%20your%20Digital%20vCard.%20Want%20to%20know%20more%20about%20your%20products%20and%20services");
+  window.open("https://wa.me/91"+clientNumber+"?text=Got%20reference%20from%20your%20Digital%20vCard.%20Want%20to%20know%20more%20about%20your%20products%20and%20services");
 }
 
-  ngOnDestroy() {}
+createCookie(name: string, value: string, days: number) {  
+  var expires = "";  
+  if (days) {  
+      var date = new Date();  
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  
+      expires = "; expires=" + date.toUTCString();  
+  }  
+  document.cookie = name + "=" + value + expires + "; path=/";  
+}  
+readCookie(name: string) {  
+  debugger;  
+  var nameEQ = name + "=";  
+  var ca = document.cookie.split(';');  
+  for (var i = 0; i < ca.length; i++) {  
+      var c = ca[i];  
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);  
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);  
+  }  
+  return null;  
+} 
+eraseCookie(name: string) {  
+  this.createCookie(name, "", -1);  
+} 
+  ngOnDestroy() {
+    this.eraseCookie(this.coookieName);
+  }
 }
