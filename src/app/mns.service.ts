@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class MnsService {
   constructor(private http: HttpClient) { }
 
   public getCardData(code:string): Observable<any> {
-    return this.http.get("../assets/JSON/data.json");
+    return this.http.get("http://localhost:8080/singlecard/"+code);
 }
 
 
