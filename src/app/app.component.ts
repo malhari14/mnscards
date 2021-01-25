@@ -36,6 +36,7 @@ coookieName: string="company";
 router:any;
 userId:any;
 html:any="";
+googleReview:string="";
 loading:boolean=true;
 
   constructor(private mnsService : MnsService,private route: ActivatedRoute    ) {}
@@ -76,6 +77,7 @@ this.loading=true;
     this.alternateNo  = data[0].alternateumber;
     this.address = data[0].address;
     this.email =data[0].email;
+    this.googleReview =data[0].googleReview;
     this.mapLocation = data[0].maplocation;
     this.facebookLink = data[0].facebooklink;
     this.instaLink =data[0].instalink;
