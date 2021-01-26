@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
 companyName : string = "";
 cardHolderName : string = "";
 designation : string = "";
+companyLogo : string = "";
 phoneNumber : string = "";
 whatsAppNumber : string = "";
 alternateNo : string = "";
@@ -73,6 +74,7 @@ this.loading=true;
     this.companyName = data.companyName;
     this.cardHolderName = data.cardHolderName;
     this.designation = data.designation;
+    this.companyLogo = data.companyLogo;
     this.natureOfBusiness = data.natureOfBusiness;
     this.estYear = data.estYear;
     this.phoneNumber  = data.phonenumber;
