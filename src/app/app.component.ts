@@ -39,6 +39,7 @@ coookieName: string="company";
 router:any;
 userId:any;
 html:any="";
+googleReview:string="";
 loading:boolean=true;
 
   constructor(private mnsService : MnsService,private route: ActivatedRoute    ) {}
