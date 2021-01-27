@@ -11,7 +11,7 @@ export class MnsService {
   constructor(private http: HttpClient) { }
 
   public getCardData(code:string): Observable<any> {
-    return this.http.get("http://localhost:8080/singlecard/"+code);
+    return this.http.get("http://ec2-13-232-195-168.ap-south-1.compute.amazonaws.com:8080/singlecard/"+code);
 }
 
 

@@ -8,7 +8,7 @@
     <div class="views-label"><i class="fas fa-eye"></i>Views: <b><span id="llbvisit">{{views}}</span></b></div>
     <div class="upper">
         <!-- User Profile Pic -->
-        <img src="http://localhost:8080/api/image/logo/{{companyLogo}}" id="ProfileImage" class="profile-pic-img">
+        <img src="http://ec2-13-232-195-168.ap-south-1.compute.amazonaws.com:8080:8080/api/image/logo/{{companyLogo}}" id="ProfileImage" class="profile-pic-img">
         <input type="hidden" name="cardid" id="cardid" value="1061">
         <input type="hidden" name="emailId" id="emailId" value="lookinsaloon@gmail.com">
         <!-- User Company Name -->
@@ -194,7 +194,7 @@
         <div class="card">
         <h3 class="card-title"></h3>
         <div class="product-description"><p></p></div>
-        <img onclick="openImageModal(this)" alt="" src="http://localhost:8080/api/image/logo/{{element.imageName}}" style="width:100%;margin-bottom: 15px;">
+        <img onclick="openImageModal(this)" alt="" src="http://ec2-13-232-195-168.ap-south-1.compute.amazonaws.com:8080/singlecard/api/image/logo/{{element.imageName}}" style="width:100%;margin-bottom: 15px;">
         <div class="product-enquiry-section"><div class="product-price"><b>{{element.productPrice}}</b></div><a href="https://wa.me/{{whatsAppNumber}}?text=Hi,%20I%20am%20interested%20in%20your%20product/service:%20%27%20Please%20provide%20more%20details." target="blank" class="product-enquiry-btn">Enquiry</a></div>
     </div>
         </div>
@@ -207,7 +207,7 @@
     <div id="div5" style="width:20%;height:2px;margin:0 auto;margin-bottom:20px;background-color:#007bb6;"></div>
     <div id="ImageGallery" class="images-container">
     <div *ngFor="let element of galleryImageArray">
-        <div class="image-wrapper"><img onclick="openImageModal(this)" alt="Image 1" src="http://localhost:8080/api/image/logo/{{element.imageName}}" style="width:100%"></div>
+        <div class="image-wrapper"><img onclick="openImageModal(this)" alt="Image 1" src="http://ec2-13-232-195-168.ap-south-1.compute.amazonaws.com:8080/singlecard/api/image/logo/{{element.imageName}}" style="width:100%"></div>
     </div>
     <div class="corner-bottom"></div>
 </div>
